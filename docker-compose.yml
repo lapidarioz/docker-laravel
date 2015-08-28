@@ -12,13 +12,13 @@ mysql:
     - mysqldata
 
 phpnginx:
-  image: harshjv/php-nginx:0.9.16-1.0
+  image: lapidarioz/docker-php-nginx-composer
   volumes_from:
     - composerdata
   links:
     - mysql
   ports:
-    - "80:80"
+    - "8080:80"
   volumes:
     - ./nginx:/etc/nginx/sites-available
     - ./:/var/www
